@@ -1,23 +1,14 @@
-# Infinite Yield 
-[![Discord](https://media.discordapp.net/attachments/338403017894395905/668536741942263808/Discord-Logo-Color.png)](https://discord.gg/78ZuWSq)
-The best command line script for roblox.
-
-Get it [here](https://github.com/EdgeIY/infiniteyield/wiki)
-
- - Currently 378 commands
- - Open Source
- - 6 years of development
-
+# Tunx Admin Script
 ## Developers
-### Creator: Edge
+### Creator: Tunx
 
-### Developer: Moon
-### Developer: Zwolf
-### Developer: Toon
+### Developer: Vinh
+### Developer: Hd4ng
+### Developer: ThinhMom
 
 
 ## Usage
-You can learn how to use all the features of this script in the wiki!
+Bạn có thể học cách sử dụng tất cả các tính năng của tập lệnh này trong Tự Học!
 
 ## Contributing
-There is no specific rules on contributing (as of now) just open a pull request and if it checks out we will merge it!
+Hiện tại không có quy tắc cụ thể nào về việc đóng góp, chỉ cần mở yêu cầu kéo và nếu được chấp nhận, chúng tôi sẽ hợp nhất!
