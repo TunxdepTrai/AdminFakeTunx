@@ -1,5 +1,5 @@
 if IY_LOADED and not _G.IY_DEBUG == true then
-    -- error("Script đang chạy rồi!)
+    -- error("Infinite Yield is already running!", 0)
     return
 end
 
@@ -12,12 +12,12 @@ Players = cloneref(game:GetService("Players"))
 if not game:IsLoaded() then
     local notLoaded = Instance.new("Message")
     notLoaded.Parent = COREGUI
-    notLoaded.Text = "Scripts Tunx đang chờ trò chơi tải"
+    notLoaded.Text = "Infinite Yield is waiting for the game to load"
     game.Loaded:Wait()
     notLoaded:Destroy()
 end
 
-currentVersion = "By Tunx"
+currentVersion = "6.2"
 
 Holder = Instance.new("Frame")
 Title = Instance.new("TextLabel")
@@ -211,7 +211,7 @@ Title.Text = "Infinite Yield FE v" .. currentVersion
 
 do
 	local emoji = ({
-		["01 01"] = "🦪",
+		["01 01"] = "🎆",
 		[(function(Year)
 			local A = math.floor(Year/100)
 			local B = math.floor((13+8*A)/25)
@@ -229,15 +229,15 @@ do
 			end
 			return ("03 %02d"):format(G)
 		end)(tonumber(os.date"%Y"))] = "🥚",
-		["10 31"] = "🌸"
-		["12 25"] = "🌾"
+		["10 31"] = "🎃",
+		["12 25"] = "🎄"
 	})[os.date("%m %d")]
 	if emoji then
 		Title.Text = ("%s %s %s"):format(emoji, Title.Text, emoji)
 	end
 end
 
-Title.TextColor3 = Color3.new(255, 255, 255)
+Title.TextColor3 = Color3.new(1, 1, 1)
 Title.ZIndex = 10
 table.insert(shade1,Title)
 table.insert(text1,Title)
