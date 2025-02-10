@@ -139,7 +139,74 @@ Exit = Instance.new("TextButton")
 ImageLabel_2 = Instance.new("ImageLabel")
 background = Instance.new("Frame")
 chat = Instance.new("Frame")
-Clear = Instance.new("TextButton")
+Clear = Instance.new("TextBu-- Hàm tạo chuỗi ngẫu nhiên
+function randomString()
+    local length = math.random(10, 20)
+    local array = {}
+    for i = 1, length do
+        array[i] = string.char(math.random(32, 126))
+    end
+    return table.concat(array)
+end
+
+-- Khai báo biến cần thiết
+local PARENT = nil
+local COREGUI = game:GetService("CoreGui") -- Lấy CoreGui
+local currentVersion = "1.0" -- Định nghĩa phiên bản
+
+-- Xác định nơi chứa GUI
+if get_hidden_gui or gethui then
+    local hiddenUI = get_hidden_gui or gethui
+    local Main = Instance.new("ScreenGui")
+    Main.Name = randomString()
+    Main.Parent = hiddenUI()
+    PARENT = Main
+elseif (not is_sirhurt_closure) and (syn and syn.protect_gui) then
+    local Main = Instance.new("ScreenGui")
+    Main.Name = randomString()
+    syn.protect_gui(Main)
+    Main.Parent = COREGUI
+    PARENT = Main
+elseif COREGUI:FindFirstChild("RobloxGui") then
+    PARENT = COREGUI.RobloxGui
+else
+    local Main = Instance.new("ScreenGui")
+    Main.Name = randomString()
+    Main.Parent = COREGUI
+    PARENT = Main
+end
+
+-- Danh sách các phần tử UI
+local shade1 = {}
+local shade2 = {}
+local shade3 = {}
+local text1 = {}
+local text2 = {}
+local scroll = {}
+
+-- Tạo Holder (Frame chính)
+local Holder = Instance.new("Frame")
+Holder.Name = randomString()
+Holder.Parent = PARENT
+Holder.Active = true
+Holder.BackgroundColor3 = Color3.fromRGB(46, 46, 47)
+Holder.BorderSizePixel = 0
+Holder.Position = UDim2.new(1, -250, 1, -220)
+Holder.Size = UDim2.new(0, 250, 0, 220)
+Holder.ZIndex = 10
+table.insert(shade2, Holder)
+
+-- Tạo Title (Thanh tiêu đề)
+local Title = Instance.new("TextLabel")
+Title.Name = "Title"
+Title.Parent = Holder
+Title.Active = true
+Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Title.BorderSizePixel = 0
+Title.Size = UDim2.new(0, 250, 0, 20)
+Title.Font = Enum.Font.SourceSans
+Title.TextSize = 18
+Title.Text = "Tunx Dep Trai " .. currentVersion -- Đảm bảo currentVersion có giá trịtton")
 SaveChatlogs = Instance.new("TextButton")
 Toggle = Instance.new("TextButton")
 scroll_2 = Instance.new("ScrollingFrame")
@@ -152,62 +219,7 @@ selectChat = Instance.new("TextButton")
 selectJoin = Instance.new("TextButton")
 
 function randomString()
-	local length = math.random(10,20)
-	local array = {}
-	for i = 1, length do
-		array[i] = string.char(math.random(32, 126))
-	end
-	return table.concat(array)
-end
 
-PARENT = nil
-if get_hidden_gui or gethui then
-	local hiddenUI = get_hidden_gui or gethui
-	local Main = Instance.new("ScreenGui")
-	Main.Name = randomString()
-	Main.Parent = hiddenUI()
-	PARENT = Main
-elseif (not is_sirhurt_closure) and (syn and syn.protect_gui) then
-	local Main = Instance.new("ScreenGui")
-	Main.Name = randomString()
-	syn.protect_gui(Main)
-	Main.Parent = COREGUI
-	PARENT = Main
-elseif COREGUI:FindFirstChild('RobloxGui') then
-	PARENT = COREGUI.RobloxGui
-else
-	local Main = Instance.new("ScreenGui")
-	Main.Name = randomString()
-	Main.Parent = COREGUI
-	PARENT = Main
-end
-
-shade1 = {}
-shade2 = {}
-shade3 = {}
-text1 = {}
-text2 = {}
-scroll = {}
-
-Holder.Name = randomString()
-Holder.Parent = PARENT
-Holder.Active = true
-Holder.BackgroundColor3 = Color3.fromRGB(46, 46, 47)
-Holder.BorderSizePixel = 0
-Holder.Position = UDim2.new(1, -250, 1, -220)
-Holder.Size = UDim2.new(0, 250, 0, 220)
-Holder.ZIndex = 10
-table.insert(shade2,Holder)
-
-Title.Name = "Title"
-Title.Parent = Holder
-Title.Active = true
-Title.BackgroundColor3 = Color3.fromRGB(255.255.255)
-Title.BorderSizePixel = 0
-Title.Size = UDim2.new(0, 250, 0, 20)
-Title.Font = Enum.Font.SourceSans
-Title.TextSize = 18
-Title.Text = "Tunx Dep Trai " .. currentVersion
 
 do
 	local emoji = ({
